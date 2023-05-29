@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "update"
-          command: "sudo apt update -y"
+          command: "sudo apt update -y && sudo apt install sudo wget -y"
       - run:
           name: "h"
           command: "sudo apt install hping3 -y"
