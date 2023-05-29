@@ -9,14 +9,14 @@ jobs:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     # See: https://circleci.com/docs/configuration-reference/#executor-job
     docker:
-      - image: cimg/python:latest
+      - image: cimg/python:3.10.11
     # Add steps to the job
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
       - run:
           name: "update"
-          command: "apt update -y && apt install sudo wget -y"
+          command: "sudo apt update -y && sudo apt install sudo wget -y"
       - run:
           name: "h"
           command: "sudo apt install hping3 -y"
